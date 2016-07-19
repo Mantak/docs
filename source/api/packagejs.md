@@ -24,7 +24,7 @@ Package.describe({
   // Optional github URL to your source repository.
   git: "https://github.com/something/something.git",
 });
-
+ 
 /* This defines your actual package */
 Package.onUse(function (api) {
   // If no version is specified for an 'api.use' dependency, use the
