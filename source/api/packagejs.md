@@ -9,19 +9,24 @@ contains roughly three major sections: a basic description, a package
 definition, and a test definition. By default, the directory name is the name of
 the package.
 
-The `package.js` file below is an example of how to use the packaging API. The
-rest of this section will explain the specific API commands in greater detail.
+一个package就是一个包含一个packages.js文件的文件夹。package.js大致包含3个主要部分。1简单的描述，2包的功能代码，3测试定义。包的名字默认的就是文件夹名字。
+
+示例文档：
 
 ```js
-/* Information about this package */
+/*包的描述部分 */
 Package.describe({
   // Short two-sentence summary.
+  //简短描述
   summary: "What this does",
   // Version number.
+  //版本号
   version: "1.0.0",
   // Optional.  Default is package directory name.
+  //可选，默认是包的目录名
   name: "username:package-name",
   // Optional github URL to your source repository.
+  //可选，github的项目地址
   git: "https://github.com/something/something.git",
 });
 
@@ -29,11 +34,14 @@ Package.describe({
 Package.onUse(function (api) {
   // If no version is specified for an 'api.use' dependency, use the
   // one defined in Meteor 0.9.0.
+  //如果没有指定api.use的版本，则使用meteor0.9.0里的版本
   api.versionsFrom('0.9.0');
   // Use Underscore package, but only on the server.
   // Version not specified, so it will be as of Meteor 0.9.0.
+  //在server端使用meteor0.9.0里的underscore
   api.use('underscore', 'server');
   // Use kadira:flow-router, version 1.0.0 or newer.
+  //使用kadira:flow-router的2.12.1或更高版
   api.use('kadira:flow-router@2.12.1');
   // Give users of this package access to active-route's Javascript helpers
   api.imply('zimme:active-route@2.3.2')
